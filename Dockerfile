@@ -1,7 +1,7 @@
 FROM rust:1.43 as builder
 
 RUN USER=root cargo new --bin ny-fishing-season
-WORKDIR /rust-docker-web
+WORKDIR /ny-fishing-season
 
 # puts the app dependencies on its own layer in the image
 COPY ./Cargo.toml ./Cargo.toml

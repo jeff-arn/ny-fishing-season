@@ -1,0 +1,360 @@
+{
+  "saltwater": [
+    {
+      "id": "winter-flounder",
+      "name": "Winter Flounder",
+      "year_round_fish": false,
+      "seasons": [
+        {
+          "start": "2021-04-01T00:00:00-05:00",
+          "end": "2021-05-30T23:59:59-05:00",
+          "limit": "2",
+          "size": "12\""
+        }
+      ]
+    },
+    {
+      "id": "black-sea-bass",
+      "name": "Black Sea Bass",
+      "year_round_fish": false,
+      "seasons": [
+        {
+          "start": "2021-06-23T00:00:00-05:00",
+          "end": "2021-08-31T23:59:59-05:00",
+          "limit": "3",
+          "size": "15\""
+        },
+        {
+          "start": "2021-09-01T00:00:00-05:00",
+          "end": "2021-12-31T23:59:59-05:00",
+          "limit": "7",
+          "size": "15\""
+        }
+      ]
+    },
+    {
+      "id": "striped-bass-hudson",
+      "name": "Striped Bass: Hudson River",
+      "year_round_fish": false,
+      "seasons": [
+        {
+          "start": "2021-04-01T00:00:00-05:00",
+          "end": "2021-11-30T23:59:59-05:00",
+          "limit": "1",
+          "size": "18\" - 28\""
+        }
+      ]
+    },
+    {
+      "id": "striped-bass-marine",
+      "name": "Striped Bass: Marine Waters",
+      "year_round_fish": false,
+      "seasons": [
+        {
+          "start": "2021-04-15T00:00:00-05:00",
+          "end": "2021-12-15T23:59:59-05:00",
+          "limit": "1",
+          "size": "28\" - 35\""
+        }
+      ]
+    },
+    {
+      "id": "porgy",
+      "name": "Scup (Porgy)",
+      "year_round_fish": true,
+      "seasons": [
+        {
+          "start": "2021-01-01T00:00:00-05:00",
+          "end": "2021-12-31T23:59:59-05:00",
+          "limit": "30",
+          "size": "9\""
+        }
+      ]
+    },
+    {
+      "id": "porgy-charter",
+      "name": "Scup (Porgy) - Anglers aboard licensed party/charter boats",
+      "year_round_fish": false,
+      "seasons": [
+        {
+          "start": "2021-09-01T00:00:00-05:00",
+          "end": "2021-10-31T23:59:59-05:00",
+          "limit": "50",
+          "size": "9\""
+        }
+      ]
+    },
+    {
+      "id": "fluke",
+      "name": "Summer Flounder (Fluke)",
+      "year_round_fish": false,
+      "seasons": [
+        {
+          "start": "2021-05-04T00:00:00-05:00",
+          "end": "2021-09-30T23:59:59-05:00",
+          "limit": "4",
+          "size": "19\""
+        }
+      ]
+    },
+    {
+      "id": "toadfish",
+      "name": "Oyster Toadfish",
+      "year_round_fish": false,
+      "seasons": [
+        {
+          "start": "2021-07-16T00:00:00-05:00",
+          "end": "2022-05-14T23:59:59-05:00",
+          "limit": "3",
+          "size": "10\""
+        }
+      ]
+    },
+    {
+      "id": "blackfish-li-sound",
+      "name": "Tautog (Blackfish) - Long Island Sound Region",
+      "year_round_fish": false,
+      "seasons": [
+        {
+          "start": "2021-04-01T00:00:00-05:00",
+          "end": "2021-04-30T23:59:59-05:00",
+          "limit": "2",
+          "size": "16\""
+        },
+        {
+          "start": "2021-10-11T00:00:00-05:00",
+          "end": "2021-12-09T23:59:59-05:00",
+          "limit": "3",
+          "size": "16\""
+        }
+      ]
+    },
+    {
+      "id": "blackfish-ny-bight",
+      "name": "Tautog (Blackfish) - NY Bight Region",
+      "year_round_fish": false,
+      "seasons": [
+        {
+          "start": "2021-04-01T00:00:00-05:00",
+          "end": "2021-04-30T23:59:59-05:00",
+          "limit": "2",
+          "size": "16\""
+        },
+        {
+          "start": "2021-10-11T00:00:00-05:00",
+          "end": "2021-12-22T23:59:59-05:00",
+          "limit": "4",
+          "size": "16\""
+        }
+      ]
+    },
+    {
+      "id": "american-eel",
+      "name": "American Eel",
+      "year_round_fish": true,
+      "seasons": [
+        {
+          "start": "2021-01-01T00:00:00-05:00",
+          "end": "2021-12-31T23:59:59-05:00",
+          "limit": "25/individual. 50/charter boat angler",
+          "size": "9\""
+        }
+      ]
+    },
+    {
+      "id": "american-eel-nyc",
+      "name": "American Eel (NYC)",
+      "year_round_fish": true,
+      "seasons": [
+        {
+          "start": "2021-01-01T00:00:00-05:00",
+          "end": "2021-12-31T23:59:59-05:00",
+          "limit": "25 for bait only",
+          "size": "9\" -14\""
+        }
+      ]
+    },
+    {
+      "id": "atlantic-cod",
+      "name": "Atlantic cod",
+      "year_round_fish": true,
+      "seasons": [
+        {
+          "start": "2021-01-01T00:00:00-05:00",
+          "end": "2021-12-31T23:59:59-05:00",
+          "limit": "10",
+          "size": "21\""
+        }
+      ]
+    },
+    {
+      "id": "bunker",
+      "name": "Atlantic menhaden (Bunker)",
+      "year_round_fish": true,
+      "seasons": [
+        {
+          "start": "2021-01-01T00:00:00-05:00",
+          "end": "2021-12-31T23:59:59-05:00",
+          "limit": "100",
+          "size": "No size limit"
+        }
+      ]
+    },
+    {
+      "id": "bluefish",
+      "name": "Bluefish (including \"snappers\")",
+      "year_round_fish": true,
+      "seasons": [
+        {
+          "start": "2021-01-01T00:00:00-05:00",
+          "end": "2021-12-31T23:59:59-05:00",
+          "limit": "3",
+          "size": "No size limit"
+        }
+      ]
+    },
+    {
+      "id": "bluefish-charter",
+      "name": "Bluefish (including \"snappers\") - Charters",
+      "year_round_fish": true,
+      "seasons": [
+        {
+          "start": "2021-01-01T00:00:00-05:00",
+          "end": "2021-12-31T23:59:59-05:00",
+          "limit": "5",
+          "size": "No size limit"
+        }
+      ]
+    },
+    {
+      "id": "cobia",
+      "name": "Cobia",
+      "year_round_fish": true,
+      "seasons": [
+        {
+          "start": "2021-01-01T00:00:00-05:00",
+          "end": "2021-12-31T23:59:59-05:00",
+          "limit": "2",
+          "size": "37\""
+        }
+      ]
+    },
+    {
+      "id": "haddock",
+      "name": "Haddock",
+      "year_round_fish": true,
+      "seasons": [
+        {
+          "start": "2021-01-01T00:00:00-05:00",
+          "end": "2021-12-31T23:59:59-05:00",
+          "limit": "No limit",
+          "size": "18\""
+        }
+      ]
+    },
+    {
+      "id": "hickory-shad",
+      "name": "Hickory Shad",
+      "year_round_fish": true,
+      "seasons": [
+        {
+          "start": "2021-01-01T00:00:00-05:00",
+          "end": "2021-12-31T23:59:59-05:00",
+          "limit": "5",
+          "size": "No size limit"
+        }
+      ]
+    },
+    {
+      "id": "king-mackerel",
+      "name": "King mackerel",
+      "year_round_fish": true,
+      "seasons": [
+        {
+          "start": "2021-01-01T00:00:00-05:00",
+          "end": "2021-12-31T23:59:59-05:00",
+          "limit": "3",
+          "size": "23\""
+        }
+      ]
+    },
+    {
+      "id": "monkfish",
+      "name": "Monkfish (goosefish)",
+      "year_round_fish": true,
+      "seasons": [
+        {
+          "start": "2021-01-01T00:00:00-05:00",
+          "end": "2021-12-31T23:59:59-05:00",
+          "limit": "No limit",
+          "size": "17\" or 11\" tail length"
+        }
+      ]
+    },
+    {
+      "id": "pollock",
+      "name": "Pollock",
+      "year_round_fish": true,
+      "seasons": [
+        {
+          "start": "2021-01-01T00:00:00-05:00",
+          "end": "2021-12-31T23:59:59-05:00",
+          "limit": "No limit",
+          "size": "19\""
+        }
+      ]
+    },
+    {
+      "id": "red-drum",
+      "name": "Red Drum",
+      "year_round_fish": true,
+      "seasons": [
+        {
+          "start": "2021-01-01T00:00:00-05:00",
+          "end": "2021-12-31T23:59:59-05:00",
+          "limit": "No limit if less than 27\"",
+          "size": "Must be less than 27\""
+        }
+      ]
+    },
+    {
+      "id": "spanish-mackerel",
+      "name": "Spanish mackerel",
+      "year_round_fish": true,
+      "seasons": [
+        {
+          "start": "2021-01-01T00:00:00-05:00",
+          "end": "2021-12-31T23:59:59-05:00",
+          "limit": "15",
+          "size": "14\""
+        }
+      ]
+    },
+    {
+      "id": "weakfish",
+      "name": "Weakfish",
+      "year_round_fish": true,
+      "seasons": [
+        {
+          "start": "2021-01-01T00:00:00-05:00",
+          "end": "2021-12-31T23:59:59-05:00",
+          "limit": "1",
+          "size": "16\""
+        }
+      ]
+    },
+    {
+      "id": "yellowtail-flounder",
+      "name": "Yellowtail flounder",
+      "year_round_fish": true,
+      "seasons": [
+        {
+          "start": "2021-01-01T00:00:00-05:00",
+          "end": "2021-12-31T23:59:59-05:00",
+          "limit": "No limit",
+          "size": "13\""
+        }
+      ]
+    }
+  ]
+}

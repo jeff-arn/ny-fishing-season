@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+    -webkit-font-smoothing: antialiased;
+    font-family: Roboto, sans-serif;
+    font-family: var(
+        --mdc-typography-body1-font-family,
+        var(--mdc-typography-font-family, Roboto, sans-serif)
+    );
+    font-size: 0.875rem;
+    font-size: var(--mdc-typography-body1-font-size, 0.875rem);
+    line-height: 1.5;
+    line-height: var(--mdc-typography-body1-line-height, 1.5);
+    font-weight: 400;
+    font-weight: var(--mdc-typography-body1-font-weight, 400);
+    letter-spacing: 0.03125em;
+    letter-spacing: var(--mdc-typography-body1-letter-spacing, 0.03125em);
+    text-decoration: inherit;
+    -webkit-text-decoration: var(
+        --mdc-typography-body1-text-decoration,
+        inherit
+    );
+    text-decoration: var(--mdc-typography-body1-text-decoration, inherit);
+    text-transform: inherit;
+    text-transform: var(--mdc-typography-body1-text-transform, inherit);
+    color: #424242;
+    letter-spacing: normal;
+}
+
+.fishing-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    margin: 0.5rem;
+    flex-basis: calc(25% - 1rem);
+}
+
+@media screen and (max-width: 480px) {
+    .card {
+        flex-basis: calc(100% - 1rem);
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+    .card {
+        flex-basis: calc(50% - 1rem);
+    }
+}
+
+.card__title-wrapper {
+    padding: 1rem;
+}
+
+.card__content-wrapper {
+    padding: 1.125rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.card__content-item-wrapper:not(:last-of-type) {
+    margin-right: 1rem;
+}
+
+.card__title {
+    font-family: Roboto, sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.0125em;
+    text-decoration: inherit;
+    text-transform: inherit;
+}
+
+.card__subheader {
+    font-family: Roboto, sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.0178571429em;
+    text-decoration: inherit;
+    text-transform: inherit;
+    opacity: 0.6;
+}
+
+.card__supporting-text {
+    font-family: Roboto, sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.0178571429em;
+    text-decoration: inherit;
+    text-transform: inherit;
+    opacity: 0.6;
+}

@@ -1,0 +1,128 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <link href="/styles/main.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+</head>
+
+<body>
+  <header class="mdc-top-app-bar mdc-top-app-bar--short">
+    <div class="mdc-top-app-bar__row">
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+        <span class="mdc-top-app-bar__title">NY Fishing Season</span>
+      </section>
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+        <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
+          aria-label="Bookmark this page">bookmark</button>
+      </section>
+    </div>
+  </header>
+
+  <main class="mdc-top-app-bar--fixed-adjust content">
+    <section id="in-season-limited" class="fishing-section">
+      <h4 class="mdc-typography--headline4">In Season (Limited time)</h4>
+      <div class="category-container">
+        {% for f in fish.in_season | filter(attribute="year_round_fish", value=false) %}
+        <div class="mdc-card mdc-card--outlined card">
+          <div class="card__title-wrapper">
+            <div class="card__title">{{f.name}}</div>
+            <div class="card__subheader">Sub heading</div>
+          </div>
+          <div class="card__content-wrapper">
+            <div class="card__content-item-wrapper">
+              <div>Size (in inches)</div>
+              <div class="card__supporting-text">{{f.size}}</div>
+            </div>
+            <div class="card__content-item-wrapper">
+              <div>Possession limit</div>
+              <div class="card__supporting-text">{{f.limit}}</div>
+            </div>
+            <div class="card__content-item-wrapper">
+              <div>Current season ends</div>
+              <div class="card__supporting-text">{{f.season_ends | date(format="%A, %B %d, %Y") }}</div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        {% if fish.in_season | filter(attribute="year_round_fish", value=false) | length == 0 %}
+        <div>
+          <p>No limited time seasons yet. See <a href="#upcoming-seasons">upcoming seasons.</a></p>
+        </div>
+        {% else %}
+        {% endif %}
+      </div>
+    </section>
+
+    <section id="in-season-all-year" class="fishing-section">
+      <h4 class="mdc-typography--headline4">In Season (All year)</h4>
+      <div class="category-container">
+        {% for f in fish.in_season | filter(attribute="year_round_fish", value=true) %}
+        <div class="mdc-card mdc-card--outlined card">
+          <div class="card__title-wrapper">
+            <div class="card__title">{{f.name}}</div>
+            <div class="card__subheader">Sub heading</div>
+          </div>
+          <div class="card__content-wrapper">
+            <div class="card__content-item-wrapper">
+              <div>Size (in inches)</div>
+              <div class="card__supporting-text">{{f.size}}</div>
+            </div>
+            <div class="card__content-item-wrapper">
+              <div>Possession limit</div>
+              <div class="card__supporting-text">{{f.limit}}</div>
+            </div>
+            <div class="card__content-item-wrapper">
+              <div>Current season ends</div>
+              <div class="card__supporting-text">All year</div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="upcoming-seasons" class="fishing-section">
+      <h4 id="in-season-all-year" class="mdc-typography--headline4">Upcoming Seasons</h4>
+      <div class="category-container">
+        {% for f in fish.upcoming_season %}
+        <div class="mdc-card mdc-card--outlined card">
+          <div class="card__title-wrapper">
+            <div class="card__title">{{f.name}}</div>
+            <div class="card__subheader">Sub heading</div>
+          </div>
+          <div class="card__content-wrapper">
+            <div class="card__content-item-wrapper">
+              <div>Next season start date</div>
+              <div class="card__supporting-text">{{f.next_season_start_date | date(format="%A, %B %d, %Y")}}</div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        {% if fish.upcoming_season | length == 0 %}
+        <div>
+          <p>No limited time seasons yet. See <a href="#upcoming-seasons">upcoming seasons.</a></p>
+        </div>
+        {% else %}
+        {% endif %}
+      </div>
+    </section>
+
+    {% if fish.out_of_season | length > 0 %}
+    <section id="season-ended" class="fishing-section">
+      <h4 class="mdc-typography--headline4">Season Ended</h4>
+      {% for f in fish.out_of_season %}
+      <div class="mdc-card mdc-card--outlined card">
+        <div class="card__title-wrapper">
+          <div class="card__title">{{f.name}}</div>
+          <div class="card__subheader">Sub heading</div>
+        </div>
+      </div>
+      {% endfor %}
+      {% else %}
+      {% endif %}
+    </section>
+  </main>
+
+</html>

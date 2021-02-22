@@ -9,7 +9,26 @@ node.addEventListener('input', (e) => {
   textFieldInput = e.target.value;
   const cleansedTextInput = textFieldInput.toLowerCase().trim();
   filterFish(cleansedTextInput);
+  filterSection('in-season-limited');
+  filterSection('in-season-all-year');
+  filterSection('upcoming-seasons');
 });
+
+function filterSection(id) {
+  const sectionNode = document.getElementById(id);
+  const cardNodes = [...sectionNode.lastElementChild.children];
+
+  // if all cards are hidden
+  if (cardNodes.every((n) => n.classList.contains('filter--hidden') || n.classList.contains('no-season-placeholder'))) {
+    if (!sectionNode.classList.contains('filter--hidden')) {
+      sectionNode.classList.add('filter--hidden');
+    }
+  } else {
+    if (sectionNode.classList.contains('filter--hidden')) {
+      sectionNode.classList.remove('filter--hidden');
+    }
+  }
+}
 
 function filterFish(filterText) {
   const cardTitleNodes = document.querySelectorAll('.card__title');

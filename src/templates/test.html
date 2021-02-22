@@ -68,7 +68,7 @@
         </div>
         {% endfor %}
         {% if fish.in_season | filter(attribute="year_round_fish", value=false) | length == 0 %}
-        <div>
+        <div class="no-season-placeholder">
           <p>No limited time seasons yet. See <a href="#upcoming-seasons">upcoming seasons.</a></p>
         </div>
         {% else %}

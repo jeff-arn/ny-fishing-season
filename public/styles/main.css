@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -28,23 +34,49 @@ body {
     letter-spacing: normal;
 }
 
+#hero {
+    background-color: var(--mdc-theme-secondary);
+}
+
 .fishing-section {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.search-bar-wrapper {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+    .search-bar-wrapper {
+        width: 100%;
+    }
+}
+
+.search-bar {
+    width: 100%;
 }
 
 .content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 3.5rem;
+}
+
+.filter--hidden {
+    display: none;
+    opacity: 0;
 }
 
 .category-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 .card {

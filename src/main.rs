@@ -22,6 +22,7 @@ async fn main() -> tide::Result<()> {
     let mut app = tide::with_state(tera);
 
     app.at("/styles").serve_dir("public/styles/")?;
+    app.at("/scripts").serve_dir("public/scripts/")?;
 
     app.at("/").get(|req: tide::Request<Tera>| async move {
         let tera = req.state();

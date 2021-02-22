@@ -74,26 +74,24 @@ body {
 }
 
 .category-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.card {
-    margin: 0.5rem;
-    flex-basis: calc(25% - 1rem);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 @media screen and (max-width: 480px) {
-    .card {
-        flex-basis: calc(100% - 1rem);
+    .category-container {
+        grid-template-columns: 1fr;
     }
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
-    .card {
-        flex-basis: calc(50% - 1rem);
+    .category-container {
+        grid-template-columns: 1fr 1fr;
     }
+}
+
+.card {
+    margin: 0.5rem;
 }
 
 .card__title-wrapper {

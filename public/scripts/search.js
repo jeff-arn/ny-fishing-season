@@ -5,11 +5,14 @@ const node = document.querySelector('.mdc-text-field');
 const textField = new MDCTextField(node);
 textField.leadingIconAriaLabel = 'search icon';
 
+let textFieldInput = '';
+
 node.addEventListener('input', (e) => {
   textFieldInput = e.target.value;
   const cleansedTextInput = textFieldInput.toLowerCase().trim();
   filterFish(cleansedTextInput);
   filterSection('in-season-limited');
+  filterPlaceholderSection('in-season-limited');
   filterSection('in-season-all-year');
   filterSection('upcoming-seasons');
 });
@@ -19,7 +22,22 @@ function filterSection(id) {
   const cardNodes = [...sectionNode.lastElementChild.children];
 
   // if all cards are hidden
-  if (cardNodes.every((n) => n.classList.contains('filter--hidden') || n.classList.contains('no-season-placeholder'))) {
+  if (cardNodes.every((n) => n.classList.contains('filter--hidden'))) {
+    if (!sectionNode.classList.contains('filter--hidden')) {
+      sectionNode.classList.add('filter--hidden');
+    }
+  } else {
+    if (sectionNode.classList.contains('filter--hidden')) {
+      sectionNode.classList.remove('filter--hidden');
+    }
+  }
+}
+
+function filterPlaceholderSection(id) {
+  const sectionNode = document.getElementById(id);
+  const cardNodes = [...sectionNode.lastElementChild.children];
+
+  if (cardNodes.length === 1 && textFieldInput.trim() !== '' && cardNodes[0].classList.contains('no-season-placeholder')) {
     if (!sectionNode.classList.contains('filter--hidden')) {
       sectionNode.classList.add('filter--hidden');
     }

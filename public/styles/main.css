@@ -7,7 +7,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #fafafa;
+    background-color: #ffffff;
     -webkit-font-smoothing: antialiased;
     font-family: Roboto, sans-serif;
     font-family: var(
@@ -30,19 +30,23 @@ body {
     text-decoration: var(--mdc-typography-body1-text-decoration, inherit);
     text-transform: inherit;
     text-transform: var(--mdc-typography-body1-text-transform, inherit);
-    color: #424242;
+    color: var(--mdc-theme-text-primary-on-background);
     letter-spacing: normal;
 }
 
 #hero {
-    background-color: var(--mdc-theme-secondary);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
+}
+
+#search {
+    padding: 1rem;
 }
 
 .fishing-section {
+    padding: 2rem;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .search-bar-wrapper {
@@ -93,6 +97,8 @@ body {
 
 .card {
     margin: 0.5rem;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
+        0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
 }
 
 .card__title-wrapper {

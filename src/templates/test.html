@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <title>NY Fishing Season</title>
+
 <head>
   <meta name="description" content="An interactive representation of the New York State DEC fishing season table.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,22 +12,18 @@
 </head>
 
 <body>
-  <header class="mdc-top-app-bar mdc-top-app-bar--short">
+  <header class="mdc-top-app-bar mdc-top-app-bar">
     <div class="mdc-top-app-bar__row">
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
         <span class="mdc-top-app-bar__title">NY Fishing Season</span>
       </section>
-      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-        <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
-          aria-label="Bookmark this page">bookmark</button>
-      </section>
     </div>
   </header>
 
-  <main class="mdc-top-app-bar--fixed-adjust content">
-    <section id="hero" class="fishing-section">
-      <h4>NY Saltwater fishing report for</h4>
-      <p>{{now() | date(format="%A, %B %d, %Y")}}</p>
+  <main class="content">
+    <section id="hero" class="fishing-section hero">
+      <p>NY Saltwater fishing report for</p>
+      <h2>{{now() | date(format="%A, %B %d, %Y")}}</h2>
     </section>
     <section id="search" class="fishing-section">
       <div class="search-bar-wrapper">
@@ -46,7 +43,7 @@
       </div>
     </section>
     <section id="in-season-limited" class="fishing-section">
-      <h4 class="mdc-typography--headline4">In Season (Limited time)</h4>
+      <h5 class="mdc-typography--headline5">In Season (Limited time)</h5>
       <div class="category-container">
         {% for f in fish.in_season | filter(attribute="year_round_fish", value=false) %}
         <div class="mdc-card mdc-card--outlined card">
@@ -79,7 +76,7 @@
     </section>
 
     <section id="in-season-all-year" class="fishing-section">
-      <h4 class="mdc-typography--headline4">In Season (All year)</h4>
+      <h5 class="mdc-typography--headline5">In Season (All year)</h5>
       <div class="category-container">
         {% for f in fish.in_season | filter(attribute="year_round_fish", value=true) %}
         <div class="mdc-card mdc-card--outlined card">
@@ -106,7 +103,7 @@
     </section>
 
     <section id="upcoming-seasons" class="fishing-section">
-      <h4 id="in-season-all-year" class="mdc-typography--headline4">Upcoming Seasons</h4>
+      <h5 id="in-season-all-year" class="mdc-typography--headline5">Upcoming Seasons</h5>
       <div class="category-container">
         {% for f in fish.upcoming_season %}
         <div class="mdc-card mdc-card--outlined card">

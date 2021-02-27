@@ -1,7 +1,5 @@
-use headless_chrome::Browser;
-
 mod tests {
-    use super::*;
+    use headless_chrome::Browser;
 
     #[test]
     fn test_page_load() -> Result<(), failure::Error> {
@@ -29,3 +27,5 @@ mod tests {
         Ok(())
     }
 }
+
+fn main() {}

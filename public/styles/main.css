@@ -1,186 +1,183 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-    -webkit-font-smoothing: antialiased;
-    font-family: Roboto, sans-serif;
-    font-family: var(
-        --mdc-typography-body1-font-family,
-        var(--mdc-typography-font-family, Roboto, sans-serif)
-    );
-    font-size: 0.875rem;
-    font-size: var(--mdc-typography-body1-font-size, 0.875rem);
-    line-height: 1.5;
-    line-height: var(--mdc-typography-body1-line-height, 1.5);
-    font-weight: 400;
-    font-weight: var(--mdc-typography-body1-font-weight, 400);
-    letter-spacing: 0.03125em;
-    letter-spacing: var(--mdc-typography-body1-letter-spacing, 0.03125em);
-    text-decoration: inherit;
-    -webkit-text-decoration: var(
-        --mdc-typography-body1-text-decoration,
-        inherit
-    );
-    text-decoration: var(--mdc-typography-body1-text-decoration, inherit);
-    text-transform: inherit;
-    text-transform: var(--mdc-typography-body1-text-transform, inherit);
-    color: var(--mdc-theme-text-primary-on-background);
-    letter-spacing: normal;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  font-family: Roboto, sans-serif;
+  font-family: var(
+    --mdc-typography-body1-font-family,
+    var(--mdc-typography-font-family, Roboto, sans-serif)
+  );
+  font-size: 0.875rem;
+  font-size: var(--mdc-typography-body1-font-size, 0.875rem);
+  line-height: 1.5;
+  line-height: var(--mdc-typography-body1-line-height, 1.5);
+  font-weight: 400;
+  font-weight: var(--mdc-typography-body1-font-weight, 400);
+  letter-spacing: 0.03125em;
+  letter-spacing: var(--mdc-typography-body1-letter-spacing, 0.03125em);
+  text-decoration: inherit;
+  -webkit-text-decoration: var(--mdc-typography-body1-text-decoration, inherit);
+  text-decoration: var(--mdc-typography-body1-text-decoration, inherit);
+  text-transform: inherit;
+  text-transform: var(--mdc-typography-body1-text-transform, inherit);
+  color: var(--mdc-theme-text-primary-on-background);
+  letter-spacing: normal;
 }
 
 #hero {
-    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
 }
 
 #search {
-    padding: 1rem;
-    display: flex;
-    flex-direction: row;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
 }
 
 @media screen and (max-width: 480px) {
-    #search {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  #search {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 /* for some reason this isn't rendering in the CSS import */
 .mdc-text-field--with-leading-icon .mdc-text-field__input {
-    padding-left: 1.5rem;
-    padding-right: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1rem;
 }
 
 .mdc-text-field--with-leading-icon .mdc-text-field__icon {
-    position: relative;
-    left: 1rem;
-    right: initial;
+  position: relative;
+  left: 1rem;
+  right: initial;
 }
 
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__icon {
-    color: rgba(0, 0, 0, 0.54);
+  color: rgba(0, 0, 0, 0.54);
 }
 
 .mdc-text-field {
-    width: 100%;
+  width: 100%;
 }
 
 .mdc-data-table {
-    max-width: 60rem;
+  max-width: 60rem;
 }
 
 .search-bar-wrapper,
 .date-select-wrapper {
-    box-sizing: border-box;
-    padding: 1rem;
+  box-sizing: border-box;
+  padding: 1rem;
 }
 
 .search-bar-wrapper {
-    flex: 1;
+  flex: 1;
 }
 
 .fishing-section {
-    padding: 2rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .search-bar {
-    width: 100%;
+  width: 100%;
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3.5rem;
 }
 
 .filter--hidden {
-    display: none;
-    opacity: 0;
+  display: none;
+  opacity: 0;
 }
 
 .category-container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 @media screen and (max-width: 480px) {
-    .category-container {
-        grid-template-columns: 1fr;
-    }
+  .category-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
-    .category-container {
-        grid-template-columns: 1fr 1fr;
-    }
+  .category-container {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .card {
-    margin: 0.5rem;
-    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
-        0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  margin: 0.5rem;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
+    0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
 }
 
 .card__title-wrapper {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .card__content-wrapper {
-    padding: 1.125rem 1rem 1rem 1rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+  padding: 1.125rem 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .card__content-item-wrapper:not(:last-of-type) {
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
 
 .card__title {
-    font-family: Roboto, sans-serif;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-size: 1.25rem;
-    line-height: 2rem;
-    font-weight: 500;
-    letter-spacing: 0.0125em;
-    text-decoration: inherit;
-    text-transform: inherit;
+  font-family: Roboto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.0125em;
+  text-decoration: inherit;
+  text-transform: inherit;
 }
 
 .card__subheader {
-    font-family: Roboto, sans-serif;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-weight: 400;
-    letter-spacing: 0.0178571429em;
-    text-decoration: inherit;
-    text-transform: inherit;
-    opacity: 0.6;
+  font-family: Roboto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.0178571429em;
+  text-decoration: inherit;
+  text-transform: inherit;
+  opacity: 0.6;
 }
 
 .card__supporting-text {
-    font-family: Roboto, sans-serif;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-weight: 400;
-    letter-spacing: 0.0178571429em;
-    text-decoration: inherit;
-    text-transform: inherit;
-    opacity: 0.6;
+  font-family: Roboto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.0178571429em;
+  text-decoration: inherit;
+  text-transform: inherit;
+  opacity: 0.6;
 }

@@ -26,6 +26,23 @@ mod tests {
 
         Ok(())
     }
+
+    #[test]
+    fn test_get_specific_date() -> Result<(), failure::Error> {
+        let browser = Browser::default()?;
+        let tab = browser.wait_for_initial_tab()?;
+        tab.navigate_to("http://localhost:4000/2021/11/30")?;
+
+        // enter search query
+        let date_text = tab
+            .wait_for_element("#hero > h2")?
+            .call_js_fn("function() { return this.innerText }", false)?
+            .value
+            .unwrap();
+        assert!(date_text == "Tuesday, November 30, 2021");
+
+        Ok(())
+    }
 }
 
 fn main() {}

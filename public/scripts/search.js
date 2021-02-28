@@ -1,13 +1,45 @@
 const MDCTextField = mdc.textField.MDCTextField;
+const MDCRipple = mdc.ripple.MDCRipple;
+
+// initialize the submit date button
+const submitButtonNode = document.getElementById('date-submit-button');
+const buttonRipple = new MDCRipple(submitButtonNode);
+submitButtonNode.disabled = true;
+
+// initializes the MDC handlers for the date selection text input
+const dateNode = document.getElementById('date-text-entry');
+const dateTextField = new MDCTextField(dateNode);
+
+let savedDate = null;
+
+dateNode.addEventListener('change', (e) => {
+  // Format YYYY-MM-DD
+  const enteredDate = e.target.value;
+
+  if (enteredDate !== savedDate && enteredDate !== '') {
+    submitButtonNode.disabled = false;
+    savedDate = enteredDate;
+  } else {
+    submitButtonNode.disabled = true;
+  }
+});
+
+submitButtonNode.addEventListener('click', () => {
+  if (!savedDate) { return; }
+
+  const [year, month, day] = savedDate.split('-');
+
+  window.location.assign(`${window.location.origin}/${year}/${month}/${day}`);
+});
 
 // initializes the MDC handlers for the component
-const node = document.querySelector('.mdc-text-field');
-const textField = new MDCTextField(node);
-textField.leadingIconAriaLabel = 'search icon';
+const searchNode = document.getElementById('fish-text-entry');
+const searchTextField = new MDCTextField(searchNode);
+searchTextField.leadingIconAriaLabel = 'search icon';
 
 let textFieldInput = '';
 
-node.addEventListener('input', (e) => {
+searchNode.addEventListener('input', (e) => {
   textFieldInput = e.target.value;
   const cleansedTextInput = textFieldInput.toLowerCase().trim();
   filterFish(cleansedTextInput);

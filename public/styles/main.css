@@ -40,6 +40,45 @@ body {
 
 #search {
     padding: 1rem;
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 480px) {
+    #search {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* for some reason this isn't rendering in the CSS import */
+.mdc-text-field--with-leading-icon .mdc-text-field__input {
+    padding-left: 1.5rem;
+    padding-right: 1rem;
+}
+
+.mdc-text-field--with-leading-icon .mdc-text-field__icon {
+    position: relative;
+    left: 1rem;
+    right: initial;
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__icon {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.mdc-text-field {
+    width: 100%;
+}
+
+.search-bar-wrapper,
+.date-select-wrapper {
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+.search-bar-wrapper {
+    flex: 1;
 }
 
 .fishing-section {
@@ -47,18 +86,6 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-}
-
-.search-bar-wrapper {
-    box-sizing: border-box;
-    width: 50%;
-    padding: 1rem;
-}
-
-@media screen and (max-width: 480px) {
-    .search-bar-wrapper {
-        width: 100%;
-    }
 }
 
 .search-bar {

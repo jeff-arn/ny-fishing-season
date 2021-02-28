@@ -71,6 +71,10 @@ body {
     width: 100%;
 }
 
+.mdc-data-table {
+    max-width: 60rem;
+}
+
 .search-bar-wrapper,
 .date-select-wrapper {
     box-sizing: border-box;

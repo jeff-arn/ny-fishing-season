@@ -25,7 +25,9 @@ dateNode.addEventListener('change', (e) => {
 });
 
 submitButtonNode.addEventListener('click', () => {
-  if (!savedDate) { return; }
+  if (!savedDate) {
+    return;
+  }
 
   const [year, month, day] = savedDate.split('-');
 
@@ -43,33 +45,20 @@ searchNode.addEventListener('input', (e) => {
   textFieldInput = e.target.value;
   const cleansedTextInput = textFieldInput.toLowerCase().trim();
   filterFish(cleansedTextInput);
-  filterSection('in-season-limited');
-  filterPlaceholderSection('in-season-limited');
-  filterSection('in-season-all-year');
-  filterSection('upcoming-seasons');
+  filterSection('in-season');
+  filterSection('out-of-season');
 });
 
 function filterSection(id) {
   const sectionNode = document.getElementById(id);
-  const cardNodes = [...sectionNode.lastElementChild.children];
+  const rowNodes = [
+    ...document.querySelectorAll(
+      `#${id} > .mdc-data-table > .mdc-data-table__table-container > .mdc-data-table__table > .mdc-data-table__content > .mdc-data-table__row`
+    ),
+  ];
 
   // if all cards are hidden
-  if (cardNodes.every((n) => n.classList.contains('filter--hidden'))) {
-    if (!sectionNode.classList.contains('filter--hidden')) {
-      sectionNode.classList.add('filter--hidden');
-    }
-  } else {
-    if (sectionNode.classList.contains('filter--hidden')) {
-      sectionNode.classList.remove('filter--hidden');
-    }
-  }
-}
-
-function filterPlaceholderSection(id) {
-  const sectionNode = document.getElementById(id);
-  const cardNodes = [...sectionNode.lastElementChild.children];
-
-  if (cardNodes.length === 1 && textFieldInput.trim() !== '' && cardNodes[0].classList.contains('no-season-placeholder')) {
+  if (rowNodes.every((n) => n.classList.contains('filter--hidden'))) {
     if (!sectionNode.classList.contains('filter--hidden')) {
       sectionNode.classList.add('filter--hidden');
     }
@@ -81,20 +70,19 @@ function filterPlaceholderSection(id) {
 }
 
 function filterFish(filterText) {
-  const cardTitleNodes = document.querySelectorAll('.card__title');
+  const fishNameNodes = document.querySelectorAll('.name-row');
 
-  cardTitleNodes.forEach((cardTitleNode) => {
-    const cardTitle = cardTitleNode.innerHTML.toLowerCase();
-    const cardNode = cardTitleNode.parentElement.parentElement;
+  fishNameNodes.forEach((fishNameNode) => {
+    const fishName = fishNameNode.innerHTML.toLowerCase();
+    const rowNode = fishNameNode.parentElement;
 
-    if (!cardTitle.includes(filterText)) {
-      if (!cardNode.classList.contains('filter--hidden')) {
-        cardNode.classList.add('filter--hidden');
+    if (!fishName.includes(filterText)) {
+      if (!rowNode.classList.contains('filter--hidden')) {
+        rowNode.classList.add('filter--hidden');
       }
     } else {
-      const cardNode = cardTitleNode.parentElement.parentElement;
-      if (cardNode.classList.contains('filter--hidden')) {
-        cardNode.classList.remove('filter--hidden');
+      if (rowNode.classList.contains('filter--hidden')) {
+        rowNode.classList.remove('filter--hidden');
       }
     }
   });

@@ -19,9 +19,8 @@ mod tests {
         // enter search query
         tab.wait_for_element("#fish-text-field-input")?.click()?;
         tab.type_str("Porgy")?.press_key("Enter")?;
-        let found_card_titles = tab.wait_for_elements(
-            ".card:not(.filter--hidden) > .card__title-wrapper > .card__title",
-        )?;
+        let found_card_titles =
+            tab.wait_for_elements(".mdc-data-table__row:not(.filter--hidden)")?;
         assert!(found_card_titles.len() == 2);
 
         Ok(())

@@ -69,103 +69,72 @@
         </div>
       </div>
     </section>
-    <section id="in-season-limited" class="fishing-section">
-      <h5 class="mdc-typography--headline5">In Season (Limited time)</h5>
-      <div class="category-container">
-        {% for f in fish.in_season | filter(attribute="year_round_fish", value=false) %}
-        <div class="mdc-card mdc-card--outlined card">
-          <div class="card__title-wrapper">
-            <div class="card__title">{{f.name}}</div>
-          </div>
-          <div class="card__content-wrapper">
-            <div class="card__content-item-wrapper">
-              <div>Size (in inches)</div>
-              <div class="card__supporting-text">{{f.size}}</div>
-            </div>
-            <div class="card__content-item-wrapper">
-              <div>Possession limit</div>
-              <div class="card__supporting-text">{{f.limit}}</div>
-            </div>
-            <div class="card__content-item-wrapper">
-              <div>Current season ends</div>
-              <div class="card__supporting-text">{{f.season_ends | date(format="%A, %B %d, %Y") }}</div>
-            </div>
-          </div>
+    <!-- Trying out new table view here -->
+    <section id="in-season" class="fishing-section">
+      <h3>In season</h3>
+      <div class="mdc-data-table mdc-data-table--sticky-header">
+        <div class="mdc-data-table__table-container">
+          <table class="mdc-data-table__table" aria-label="In season fish">
+            <thead>
+              <tr class="mdc-data-table__header-row">
+                <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Name</th>
+                <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Size</th>
+                <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Allowance</th>
+                <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Goes out of season</th>
+              </tr>
+            </thead>
+            <tbody class="mdc-data-table__content">
+              {% for f in fish.in_season | filter(attribute="year_round_fish", value=false) %}
+              <tr class="mdc-data-table__row">
+                <th class="name-row mdc-data-table__cell" scope="row">{{f.name}}</th>
+                <td class="mdc-data-table__cell">{{f.size}}</td>
+                <td class="mdc-data-table__cell">{{f.limit}}</td>
+                <td class="mdc-data-table__cell">{{f.season_ends | date(format="%A, %B %d, %Y") }}</td>
+              </tr>
+              {% endfor %}
+              {% for f in fish.in_season | filter(attribute="year_round_fish", value=true) %}
+              <tr class="mdc-data-table__row">
+                <th class="name-row mdc-data-table__cell" scope="row">{{f.name}}</th>
+                <td class="mdc-data-table__cell">{{f.size}}</td>
+                <td class="mdc-data-table__cell">{{f.limit}}</td>
+                <td class="mdc-data-table__cell">--</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
         </div>
-        {% endfor %}
-        {% if fish.in_season | filter(attribute="year_round_fish", value=false) | length == 0 %}
-        <div class="no-season-placeholder">
-          <p>No limited time seasons yet. See <a href="#upcoming-seasons">upcoming seasons.</a></p>
-        </div>
-        {% else %}
-        {% endif %}
       </div>
     </section>
 
-    <section id="in-season-all-year" class="fishing-section">
-      <h5 class="mdc-typography--headline5">In Season (All year)</h5>
-      <div class="category-container">
-        {% for f in fish.in_season | filter(attribute="year_round_fish", value=true) %}
-        <div class="mdc-card mdc-card--outlined card">
-          <div class="card__title-wrapper">
-            <div class="card__title">{{f.name}}</div>
-          </div>
-          <div class="card__content-wrapper">
-            <div class="card__content-item-wrapper">
-              <div>Size (in inches)</div>
-              <div class="card__supporting-text">{{f.size}}</div>
-            </div>
-            <div class="card__content-item-wrapper">
-              <div>Possession limit</div>
-              <div class="card__supporting-text">{{f.limit}}</div>
-            </div>
-            <div class="card__content-item-wrapper">
-              <div>Current season ends</div>
-              <div class="card__supporting-text">All year</div>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </section>
-
-    <section id="upcoming-seasons" class="fishing-section">
-      <h5 id="in-season-all-year" class="mdc-typography--headline5">Upcoming Seasons</h5>
-      <div class="category-container">
-        {% for f in fish.upcoming_season %}
-        <div class="mdc-card mdc-card--outlined card">
-          <div class="card__title-wrapper">
-            <div class="card__title">{{f.name}}</div>
-          </div>
-          <div class="card__content-wrapper">
-            <div class="card__content-item-wrapper">
-              <div>Next season start date</div>
-              <div class="card__supporting-text">{{f.next_season_start_date | date(format="%A, %B %d, %Y")}}</div>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-        {% if fish.upcoming_season | length == 0 %}
-        <div>
-          <p>No limited time seasons yet. See <a href="#upcoming-seasons">upcoming seasons.</a></p>
-        </div>
-        {% else %}
-        {% endif %}
-      </div>
-    </section>
-
-    {% if fish.out_of_season | length > 0 %}
-    <section id="season-ended" class="fishing-section">
-      <h4 class="mdc-typography--headline4">Season Ended</h4>
-      {% for f in fish.out_of_season %}
-      <div class="mdc-card mdc-card--outlined card">
-        <div class="card__title-wrapper">
-          <div class="card__title">{{f.name}}</div>
+    <!--Trying out out of season table here-->
+    <section id="out-of-season" class="fishing-section">
+      <h3>Out of season</h3>
+      <div class="mdc-data-table mdc-data-table--sticky-header">
+        <div class="mdc-data-table__table-container">
+          <table class="mdc-data-table__table" aria-label="In season fish">
+            <thead>
+              <tr class="mdc-data-table__header-row">
+                <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Name</th>
+                <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Goes back in season</th>
+              </tr>
+            </thead>
+            <tbody class="mdc-data-table__content">
+              {% for f in fish.upcoming_season %}
+              <tr class="mdc-data-table__row">
+                <th class="name-row mdc-data-table__cell" scope="row">{{f.name}}</th>
+                <td class="mdc-data-table__cell">{{f.next_season_start_date | date(format="%A, %B %d, %Y") }}</td>
+              </tr>
+              {% endfor %}
+              {% for f in fish.out_of_season %}
+              <tr class="mdc-data-table__row">
+                <th class="name-row mdc-data-table__cell" scope="row">{{f.name}}</th>
+                <td class="mdc-data-table__cell">--</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
         </div>
       </div>
-      {% endfor %}
-      {% else %}
-      {% endif %}
     </section>
   </main>
   <script src="/scripts/search.js"></script>

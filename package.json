@@ -1,0 +1,22 @@
+{
+  "name": "ny-fishing-season",
+  "version": "1.0.0",
+  "description": "package used strictly for running semantic-release",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/repjarms/ny-fishing-season.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/repjarms/ny-fishing-season/issues"
+  },
+  "homepage": "https://github.com/repjarms/ny-fishing-season#readme",
+  "dependencies": {
+    "semantic-release": "^17.4.1"
+  }
+}

@@ -21,57 +21,61 @@
   </header>
 
   <main class="content">
-    <section id="hero" class="fishing-section hero">
-      <p>NY Saltwater fishing report for</p>
-      <h2>{{target_date | date(format="%A, %B %d, %Y")}}</h2>
-    </section>
     <section id="search" class="fishing-section">
-      <div class="date-select-wrapper">
-        <div id="date-text-entry"
-          class="mdc-text-field mdc-text-field--filled mdc-ripple-upgraded mdc-text-field--with-leading-icon">
-          <i aria-hidden="true" class="material-icons mdc-text-field__icon">
-            <!---->
-            date_range
-            <!---->
-          </i>
-          <input id="date-text-field-input" type="date" class="mdc-text-field__input" min="2021-01-01" max="2021-12-31">
-          <span class="mdc-line-ripple"></span>
-          <label for="date-text-field-input" class="mdc-floating-label">
-            <!---->
-            Enter a date
-            <!---->
-          </label>
+      <p>NY Saltwater fishing report for <b>{{target_date | date(format="%A, %B %d, %Y")}}</b></p>
+      <div class="control-container">
+        <div class="date-select-wrapper">
+          <div id="date-text-entry"
+            class="mdc-text-field mdc-text-field--filled mdc-ripple-upgraded mdc-text-field--with-leading-icon">
+            <i aria-hidden="true" class="material-icons mdc-text-field__icon">
+              <!---->
+              date_range
+              <!---->
+            </i>
+            <input id="date-text-field-input" type="date" class="mdc-text-field__input" min="2021-01-01"
+              max="2021-12-31">
+            <span class="mdc-line-ripple"></span>
+            <label for="date-text-field-input" class="mdc-floating-label">
+              <!---->
+              Enter a date
+              <!---->
+            </label>
+          </div>
+          <div class="mdc-touch-target-wrapper">
+            <button id="date-submit-button" class="mdc-button mdc-button--touch mdc-button--raised">
+              <span class="mdc-button__ripple"></span>
+              <span class="mdc-button__label">Enter Date</span>
+              <span class="mdc-button__touch"></span>
+            </button>
+          </div>
         </div>
-        <div class="mdc-touch-target-wrapper">
-          <button id="date-submit-button" class="mdc-button mdc-button--touch mdc-button--raised">
-            <span class="mdc-button__ripple"></span>
-            <span class="mdc-button__label">Enter Date</span>
-            <span class="mdc-button__touch"></span>
-          </button>
-        </div>
-      </div>
-      <div class="search-bar-wrapper">
-        <div id="fish-text-entry"
-          class="mdc-text-field mdc-text-field--filled mdc-ripple-upgraded mdc-text-field--with-leading-icon">
-          <i aria-hidden="true" class="material-icons mdc-text-field__icon">
-            <!---->
-            search
-            <!---->
-          </i>
-          <input id="fish-text-field-input" type="text" class="mdc-text-field__input">
-          <span class="mdc-line-ripple"></span>
-          <label for="fish-text-field-input" class="mdc-floating-label">
-            <!---->
-            Search fish
-            <!---->
-          </label>
+        <div class="search-bar-wrapper">
+          <div id="fish-text-entry"
+            class="mdc-text-field mdc-text-field--filled mdc-ripple-upgraded mdc-text-field--with-leading-icon">
+            <i aria-hidden="true" class="material-icons mdc-text-field__icon">
+              <!---->
+              search
+              <!---->
+            </i>
+            <input id="fish-text-field-input" type="text" class="mdc-text-field__input">
+            <span class="mdc-line-ripple"></span>
+            <label for="fish-text-field-input" class="mdc-floating-label">
+              <!---->
+              Search fish
+              <!---->
+            </label>
+          </div>
         </div>
       </div>
     </section>
+
+    <!--Because the panel is fixed position we need to space the content-->
+    <div class="header-spacer"></div>
+
     <!-- Trying out new table view here -->
     <section id="in-season" class="fishing-section">
       <h3>In season</h3>
-      <div class="mdc-data-table mdc-data-table--sticky-header">
+      <div class="mdc-data-table">
         <div class="mdc-data-table__table-container">
           <table class="mdc-data-table__table" aria-label="In season fish">
             <thead>
@@ -108,7 +112,7 @@
     <!--Trying out out of season table here-->
     <section id="out-of-season" class="fishing-section">
       <h3>Out of season</h3>
-      <div class="mdc-data-table mdc-data-table--sticky-header">
+      <div class="mdc-data-table">
         <div class="mdc-data-table__table-container">
           <table class="mdc-data-table__table" aria-label="In season fish">
             <thead>
@@ -137,6 +141,7 @@
     </section>
   </main>
   <script src="/scripts/search.js"></script>
+  <script src="/scripts/transitions.js"></script>
 </body>
 
 </html>
